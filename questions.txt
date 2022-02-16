@@ -1,0 +1,4 @@
+﻿Piros ?;Piros;Kék;Zöld;Sárga;Piros
+Kék ?;Piros;Kék;Zöld;Sárga;Kék
+Zöld ?;Piros;Kék;Zöld;Sárga;Zöld
+Sárga ?;Piros;Kék;Zöld;Sárga;Sárga
