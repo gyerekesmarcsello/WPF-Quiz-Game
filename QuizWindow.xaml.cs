@@ -30,12 +30,15 @@ namespace QuizGame
             InitializeComponent();
             InitializeLabelContents();
 
-            _time = TimeSpan.FromSeconds(5);
+            _time = TimeSpan.FromSeconds(59);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 mytimer.Text = _time.ToString("c").Split(":")[2];
-                if (_time == TimeSpan.Zero) this.DialogResult = false;
+                if (_time == TimeSpan.Zero)
+                {
+                    this.DialogResult = false;
+                }
                 _time = _time.Add(TimeSpan.FromSeconds(-1));
             }, Application.Current.Dispatcher);
 
@@ -53,7 +56,7 @@ namespace QuizGame
         {
             if (e.Source is Label && e.Source != null)
             {
-                if ((e.Source as Label).Content.ToString() == this.item.Answear)
+                if ((e.Source as Label).Content.ToString() == this.item.Answer)
                 {
                     this.DialogResult = true;
                 }
