@@ -21,7 +21,6 @@ namespace QuizGame
     public partial class QuizWindow : Window
     {
         private QuizItem item;
-        public int result = 2;
         DispatcherTimer _timer;
         TimeSpan _time;
 
@@ -48,6 +47,20 @@ namespace QuizGame
             for (int i = 1; i < mypanel.Children.Count; i++)
             {
                 (mypanel.Children[i] as Label).Content = this.item.Choices[i - 1];
+            }
+        }
+        private void an1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.Source is Label && e.Source != null)
+            {
+                if ((e.Source as Label).Content.ToString() == this.item.Answear)
+                {
+                    this.DialogResult = true;
+                }
+                else
+                {
+                    this.DialogResult = false;
+                }
             }
         }
 
