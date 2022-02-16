@@ -66,7 +66,18 @@ namespace QuizGame
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            if (DialogResult == null)
+            {
+                MessageBoxResult result = MessageBox.Show("Be akarja zárni az ablakot?", "QuizWindow", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        break;
+                    case MessageBoxResult.No:
+                        e.Cancel = true;
+                        break;
+                }
+            }
         }
     }
 }
