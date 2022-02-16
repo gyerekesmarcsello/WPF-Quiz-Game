@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:QuizGame"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" WindowState="Maximized">
-    <WrapPanel x:Name="wrap">
+    <WrapPanel x:Name="wrap"> </WrapPanel>
 </Window>

@@ -52,6 +52,19 @@ namespace QuizGame
         {
             Label l = (sender as Label);
             QuizItem w = (QuizItem)(l.Tag);
+
+            QuizWindow qw = new QuizWindow(w);
+            qw.ShowDialog();
+            if (qw.DialogResult == true)
+            {
+                l.Background = Brushes.LightGreen;
+                l.IsEnabled = false;
+            }
+            else if (qw.DialogResult == false)
+            {
+                l.Background = Brushes.LightPink;
+                l.IsEnabled = false;
+            }
         }
     }
     public class QuizItem
