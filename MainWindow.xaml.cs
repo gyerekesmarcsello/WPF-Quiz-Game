@@ -50,7 +50,8 @@ namespace QuizGame
         }
         private void L_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            Label l = (sender as Label);
+            QuizItem w = (QuizItem)(l.Tag);
         }
     }
     public class QuizItem
