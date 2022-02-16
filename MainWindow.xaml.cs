@@ -29,5 +29,23 @@ namespace QuizGame
         {
 
         }
+
+    }
+    public class QuizItem
+    {
+        public string Question { get; set; }
+        public List<string> Choices
+        {
+            get; set;
+        }
+
+        public string Answear { get; set; }
+
+        public QuizItem(string question, List<string> choices, string answear)
+        {
+            this.Question = question;
+            this.Choices = choices;
+            this.Answear = answear;
+        }
     }
 }
