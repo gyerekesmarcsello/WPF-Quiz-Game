@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizGame"
         mc:Ignorable="d"
-        Title="QuizWindow" Height="450" Width="800">
+        Title="Window2" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
-        
+        <TextBlock  x:Name="mytimer" HorizontalAlignment="Left" Margin="361,37,0,0" Text="60" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36"/>
+        <StackPanel x:Name="mypanel" MouseLeftButtonDown="an1_MouseLeftButtonDown" VerticalAlignment="Center">
+            <Label x:Name="question" Content="" Background="LightBlue" Margin="5"></Label>
+            <Label x:Name="an1" Content="" Padding="10" HorizontalAlignment="Left" BorderThickness="1" Margin="5"></Label>
+            <Label  x:Name="an2" Content="" Padding="10" HorizontalAlignment="Left" BorderThickness="1" Margin="5"></Label>
+            <Label x:Name="an3" Content="" Padding="10" HorizontalAlignment="Left" BorderThickness="1" Margin="5"></Label>
+            <Label  x:Name="an4" Content="" Padding="10" HorizontalAlignment="Left" BorderThickness="1" Margin="5"></Label>
+        </StackPanel>
     </Grid>
 </Window>
