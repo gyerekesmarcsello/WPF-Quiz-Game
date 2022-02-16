@@ -31,7 +31,7 @@ namespace QuizGame
             List<QuizItem> list = new List<QuizItem>();
             foreach (string line in File.ReadLines("questions.txt"))
             {
-                string[] obj = line.Split(";");
+                string[] obj = line.Split(";");     
                 list.Add(new QuizItem(obj[0], new List<string> { obj[1], obj[2], obj[3], obj[4] }, obj[5]));
             }
 
@@ -80,7 +80,9 @@ namespace QuizGame
         public QuizItem(string question, List<string> choices, string answer)
         {
             this.Question = question;
-            this.Choices = choices;
+     
+            var rnd = new Random();
+            this.Choices = choices.OrderBy(item => rnd.Next()).ToList();
             this.Answer = answer;
         }
     }
