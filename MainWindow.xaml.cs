@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,30 @@ namespace QuizGame
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            List<QuizItem> list = new List<QuizItem>();
+            foreach (string line in File.ReadLines("quiz.txt"))
+            {
+                string[] obj = line.Split(";");
+                list.Add(new QuizItem(obj[0], new List<string> { obj[1], obj[2], obj[3], obj[4] }, obj[5]));
+            }
 
+            list.ForEach(t =>
+            {
+                Label l = new Label();
+                l.Tag = t;
+                l.Background = Brushes.LightBlue;
+                l.Margin = new Thickness(20);
+                l.Width = this.ActualWidth / 12;
+                l.Height = this.ActualHeight / 8;
+                wrap.Children.Add(l);
+
+                l.MouseLeftButtonDown += L_MouseLeftButtonDown;
+            });
         }
-
+        private void L_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class QuizItem
     {
